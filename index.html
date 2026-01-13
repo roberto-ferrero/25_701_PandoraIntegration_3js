@@ -39,9 +39,19 @@
                     shops_dataPath: "./assets/map3d/data/shops.json",
                     events_dataPath: "./assets/map3d/data/events.json"
                 });
-                // window.PandoraMap.emitter.on("onClickCity", (event) => {
-                //     // alert(`Ciudad clickeada: ${event.id}`);
-                // });
+                //-----------
+                window.platform.webglApp.emitter.on("onCityClicked", (data) => {
+                console.log("CITY Clicked:", data.id);
+                // Aquí puedes manejar el evento como desees
+                })
+                window.platform.webglApp.emitter.on("onEventClicked", (data) => {
+                    console.log("EVENT Clicked:", data.id);
+                    // Aquí puedes manejar el evento como desees
+                })
+                window.platform.webglApp.emitter.on("onShopClicked", (data) => {
+                    console.log("SHOP Clicked:", data.id);
+                    // Aquí puedes manejar el evento como desees
+                })
             } else {
                 console.error("La librería PandoraMap no se cargó correctamente.");
             }
